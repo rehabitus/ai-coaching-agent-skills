@@ -34,13 +34,13 @@ These foundational agents exist for every user and client in the system.
 
 | # | Skill | Description | Status |
 |---|-------|-------------|--------|
-| 01 | [Vision Agent](skills/01-vision-agent.md) | Clarify direction — establish future states, anchor goals, maintain the north star | `placeholder` |
-| 02 | [Persona Agent](skills/02-persona-agent.md) | Evolving self-model — track identity shifts, adapt guidance to who the user is becoming | `placeholder` |
-| 03 | [Journey Co-Pilot](skills/03-journey-copilot.md) | Orchestration layer — coordinate all agents, decide what happens next, detect readiness | `placeholder` |
-| 04 | [Lessons Agent (Lescen)](skills/04-lessons-agent.md) | Learn / Practice / Play engine — deliver experience-driven learning that never ends | `placeholder` |
-| 05 | [Creator Agent](skills/05-creator-agent.md) | Play becomes output — turn insights into ideas, frameworks, drafts, and prototypes | `placeholder` |
-| 06 | [Producer Agent](skills/06-producer-agent.md) | Idea to execution — add structure, timelines, and momentum to ship imperfectly | `placeholder` |
-| 07 | [Composer Agent](skills/07-composer-agent.md) | Integration and narrative — synthesize across all agents, prevent fragmentation | `placeholder` |
+| 01 | [Vision Agent](skills/01-vision-agent/) | Clarify direction — establish future states, anchor goals, maintain the north star | `placeholder` |
+| 02 | [Persona Agent](skills/02-persona-agent/) | Evolving self-model — track identity shifts, adapt guidance to who the user is becoming | `placeholder` |
+| 03 | [Journey Co-Pilot](skills/03-journey-copilot/) | Orchestration layer — coordinate all agents, decide what happens next, detect readiness | `placeholder` |
+| 04 | [Lessons Agent (Lescen)](skills/04-lessons-agent/) | Learn / Practice / Play engine — deliver experience-driven learning that never ends | `placeholder` |
+| 05 | [Creator Agent](skills/05-creator-agent/) | Play becomes output — turn insights into ideas, frameworks, drafts, and prototypes | `placeholder` |
+| 06 | [Producer Agent](skills/06-producer-agent/) | Idea to execution — add structure, timelines, and momentum to ship imperfectly | `placeholder` |
+| 07 | [Composer Agent](skills/07-composer-agent/) | Integration and narrative — synthesize across all agents, prevent fragmentation | `placeholder` |
 
 ### Scaling Agents (AgentC Layer)
 
@@ -48,10 +48,10 @@ B2B leverage agents used in the ForeSee / 4C Agency to scale coaching operations
 
 | # | Skill | Description | Status |
 |---|-------|-------------|--------|
-| 08 | [Scout Agent](skills/08-scout-agent.md) | Signal detection — identify opportunities, monitor trends, detect market gaps | `placeholder` |
-| 09 | [Enrichment Agent](skills/09-enrichment-agent.md) | Context expansion — add depth, references, case studies to upgrade signal to insight | `placeholder` |
-| 10 | [Sharing Agent](skills/10-sharing-agent.md) | Distribution and feedback — prepare outputs for platforms, close feedback loops | `placeholder` |
-| 11 | [Integrating Agent](skills/11-integrating-agent.md) | System memory — feed results back, update models, improve future guidance | `placeholder` |
+| 08 | [Scout Agent](skills/08-scout-agent/) | Signal detection — identify opportunities, monitor trends, detect market gaps | `placeholder` |
+| 09 | [Enrichment Agent](skills/09-enrichment-agent/) | Context expansion — add depth, references, case studies to upgrade signal to insight | `placeholder` |
+| 10 | [Sharing Agent](skills/10-sharing-agent/) | Distribution and feedback — prepare outputs for platforms, close feedback loops | `placeholder` |
+| 11 | [Integrating Agent](skills/11-integrating-agent/) | System memory — feed results back, update models, improve future guidance | `placeholder` |
 
 ### How They Work Together
 
@@ -123,14 +123,15 @@ We welcome contributions from coaches, builders, and AI practitioners. See [CONT
 
 ### Adding a new skill
 
-Name your file with the next available number prefix:
+Create a numbered directory with a `SKILL.md` inside:
 
 ```
 skills/
-  12-your-skill-name.md
+  12-your-skill-name/
+    SKILL.md
 ```
 
-Use [00-template.md](skills/00-template.md) as a starting point.
+Use [00-template](skills/00-template/) as a starting point.
 
 ---
 
