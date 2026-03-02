@@ -7,8 +7,8 @@ Thank you for your interest in contributing. These skills power the 4C AI Coachi
 ### Adding a New Skill
 
 1. Fork this repo
-2. Create a new folder under the appropriate category in `skills/`
-3. Use `skills/template/SKILL.md` as your starting point
+2. Create a new numbered file in `skills/` (e.g. `12-your-skill-name.md`)
+3. Use `skills/00-template.md` as your starting point
 4. Include clear frontmatter (`name`, `description`)
 5. Write the skill body with structured sections
 6. Submit a pull request
@@ -19,18 +19,7 @@ Thank you for your interest in contributing. These skills power the 4C AI Coachi
 2. Fork and make your changes
 3. Submit a pull request referencing the issue
 
-### Skill Structure
-
-```
-skills/
-  category/
-    your-skill-name/
-      SKILL.md          # Required
-      references/       # Optional — supporting docs, examples
-        example.md
-```
-
-### SKILL.md Format
+### Skill File Format
 
 ```yaml
 ---

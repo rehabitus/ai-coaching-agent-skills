@@ -4,7 +4,7 @@
 
 Built by [Rehabit](https://rehabit.ai) — rehabiting coaching through AI that focuses on our *Actual Intelligence*. These skills power the **4C AI Coaching OS**, a coordinated agent system that helps conscious coaches clarify their vision, liberate their time, and scale their impact.
 
-> The HOLOPreneur thesis: A solo founder-coach, armed with the right AI agent skills, can reach a billion lives — measured not in revenue alone, but in the reach and impact that revenue enables. From dystopia to utopia, one coached human at a time.
+> The HOLOProneur thesis: A solo founder-coach, armed with the right AI agent skills, can reach a billion lives — measured not in revenue alone, but in the reach and impact that revenue enables. From dystopia to utopia, one coached human at a time.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -13,7 +13,7 @@ Built by [Rehabit](https://rehabit.ai) — rehabiting coaching through AI that f
 
 ## What Are Agent Skills?
 
-Agent Skills are portable instruction sets (`.md` files) that give AI agents specialized capabilities. Drop a `SKILL.md` into your project and your AI assistant gains domain expertise — from coaching session design to client journey orchestration.
+Agent Skills are portable instruction sets (`.md` files) that give AI agents specialized capabilities. Drop one into your project and your AI assistant gains domain expertise — from coaching session design to client journey orchestration.
 
 Each skill in this collection is designed for the **4C execution loop**:
 
@@ -32,26 +32,26 @@ Each skill in this collection is designed for the **4C execution loop**:
 
 These foundational agents exist for every user and client in the system.
 
-| Skill | Description | Status |
-|-------|-------------|--------|
-| [Vision Agent](skills/core/vision-agent/) | Clarify direction — establish future states, anchor goals, maintain the north star | `placeholder` |
-| [Persona Agent](skills/core/persona-agent/) | Evolving self-model — track identity shifts, adapt guidance to who the user is becoming | `placeholder` |
-| [Journey Co-Pilot](skills/core/journey-copilot/) | Orchestration layer — coordinate all agents, decide what happens next, detect readiness | `placeholder` |
-| [Lessons Agent (Lescen)](skills/core/lessons-agent/) | Learn / Practice / Play engine — deliver experience-driven learning that never ends | `placeholder` |
-| [Creator Agent](skills/core/creator-agent/) | Play becomes output — turn insights into ideas, frameworks, drafts, and prototypes | `placeholder` |
-| [Producer Agent](skills/core/producer-agent/) | Idea to execution — add structure, timelines, and momentum to ship imperfectly | `placeholder` |
-| [Composer Agent](skills/core/composer-agent/) | Integration and narrative — synthesize across all agents, prevent fragmentation | `placeholder` |
+| # | Skill | Description | Status |
+|---|-------|-------------|--------|
+| 01 | [Vision Agent](skills/01-vision-agent.md) | Clarify direction — establish future states, anchor goals, maintain the north star | `placeholder` |
+| 02 | [Persona Agent](skills/02-persona-agent.md) | Evolving self-model — track identity shifts, adapt guidance to who the user is becoming | `placeholder` |
+| 03 | [Journey Co-Pilot](skills/03-journey-copilot.md) | Orchestration layer — coordinate all agents, decide what happens next, detect readiness | `placeholder` |
+| 04 | [Lessons Agent (Lescen)](skills/04-lessons-agent.md) | Learn / Practice / Play engine — deliver experience-driven learning that never ends | `placeholder` |
+| 05 | [Creator Agent](skills/05-creator-agent.md) | Play becomes output — turn insights into ideas, frameworks, drafts, and prototypes | `placeholder` |
+| 06 | [Producer Agent](skills/06-producer-agent.md) | Idea to execution — add structure, timelines, and momentum to ship imperfectly | `placeholder` |
+| 07 | [Composer Agent](skills/07-composer-agent.md) | Integration and narrative — synthesize across all agents, prevent fragmentation | `placeholder` |
 
 ### Scaling Agents (AgentC Layer)
 
 B2B leverage agents used in the ForeSee / 4C Agency to scale coaching operations.
 
-| Skill | Description | Status |
-|-------|-------------|--------|
-| [Scout Agent](skills/scaling/scout-agent/) | Signal detection — identify opportunities, monitor trends, detect market gaps | `placeholder` |
-| [Enrichment Agent](skills/scaling/enrichment-agent/) | Context expansion — add depth, references, case studies to upgrade signal to insight | `placeholder` |
-| [Sharing Agent](skills/scaling/sharing-agent/) | Distribution and feedback — prepare outputs for platforms, close feedback loops | `placeholder` |
-| [Integrating Agent](skills/scaling/integrating-agent/) | System memory — feed results back, update models, improve future guidance | `placeholder` |
+| # | Skill | Description | Status |
+|---|-------|-------------|--------|
+| 08 | [Scout Agent](skills/08-scout-agent.md) | Signal detection — identify opportunities, monitor trends, detect market gaps | `placeholder` |
+| 09 | [Enrichment Agent](skills/09-enrichment-agent.md) | Context expansion — add depth, references, case studies to upgrade signal to insight | `placeholder` |
+| 10 | [Sharing Agent](skills/10-sharing-agent.md) | Distribution and feedback — prepare outputs for platforms, close feedback loops | `placeholder` |
+| 11 | [Integrating Agent](skills/11-integrating-agent.md) | System memory — feed results back, update models, improve future guidance | `placeholder` |
 
 ### How They Work Together
 
@@ -78,11 +78,11 @@ Vision sets direction
 git clone https://github.com/rehabitus/ai-coaching-agent-skills.git
 ```
 
-Copy any skill folder into your project's `.claude/skills/` directory (or equivalent).
+Copy any skill file from `skills/` into your project.
 
-### Option 2: Use individual skills
+### Option 2: Use an individual skill
 
-Copy the `SKILL.md` from any skill folder directly into your AI workflow.
+Download or copy a single numbered `.md` file directly into your AI workflow.
 
 ### Option 3: Reference as submodule
 
@@ -113,7 +113,7 @@ Most AI systems answer questions, generate content, or optimize tasks.
 
 They don't just help users *do things* — they help users **become the kind of person who can do those things repeatedly**.
 
-The agents here are designed for coaches who project positive visions and images into the world. AI focused on Actual Intelligence. Skills essential for the HOLOPreneur — the solo founder-coach building toward massive impact.
+The agents here are designed for coaches who project positive visions and images into the world. AI focused on Actual Intelligence. Skills essential for the HOLOProneur — the solo founder-coach building toward massive impact.
 
 ---
 
@@ -121,17 +121,16 @@ The agents here are designed for coaches who project positive visions and images
 
 We welcome contributions from coaches, builders, and AI practitioners. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### Creating a new skill
+### Adding a new skill
+
+Name your file with the next available number prefix:
 
 ```
 skills/
-  category/
-    your-skill-name/
-      SKILL.md          # Required — the skill definition
-      references/       # Optional — supporting docs
+  12-your-skill-name.md
 ```
 
-Use the [skill template](skills/template/) as a starting point.
+Use [00-template.md](skills/00-template.md) as a starting point.
 
 ---
 
