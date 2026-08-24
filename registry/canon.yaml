@@ -1,0 +1,54 @@
+# The Skill Canon. Every entry MUST resolve to a Tier-A creator in creators.yaml.
+# status: canonized | pending-test | superseded | drifted | archived
+
+skills:
+  - id: ui-ux/frontend-design
+    creator: anthropic
+    role: "Creative direction — breaks agents out of generic AI aesthetics"
+    upstream:
+      repo: https://github.com/anthropics/skills
+      distribution: plugin-marketplace     # first-party; never vendored
+      license: n/a-first-party
+    status: canonized
+    canonized: 2026-08-24
+    installed: true
+
+  - id: ui-ux/web-design-guidelines
+    creator: vercel-labs
+    role: "Correctness gate — audits 100+ rules for a11y, keyboard, motion, perf"
+    upstream:
+      repo: https://github.com/vercel-labs/agent-skills
+      distribution: plugin-marketplace
+      license: n/a-first-party
+    status: canonized
+    canonized: 2026-08-24
+    installed: false                        # ACTION: the one gap in the stack
+    note: >
+      Re-fetches canonical guidelines on every run rather than bundling static
+      rules, so it cannot drift from upstream.
+
+  - id: frontend-web/react-best-practices
+    creator: vercel-labs
+    role: "React performance and pattern review"
+    upstream:
+      repo: https://github.com/vercel-labs/agent-skills
+      distribution: plugin-marketplace
+      license: n/a-first-party
+    status: canonized
+    canonized: 2026-08-24
+    installed: true
+
+  - id: ui-ux/ui-ux-pro-max
+    creator: nextlevelbuilder
+    role: "Reference layer — searchable DBs of styles, palettes, type, UX rules"
+    upstream:
+      repo: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+      commit: null                          # pin on canonization
+      license: MIT
+      distribution: vendored
+    status: pending-test
+    installed: true
+    blocked_on: "Hands-on verdict from Mike; creator is Tier C pending that test"
+
+# The canonized stack composes as three layers:
+#   generate (frontend-design) -> look up (ui-ux-pro-max) -> audit (web-design-guidelines)

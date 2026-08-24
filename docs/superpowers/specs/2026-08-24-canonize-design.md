@@ -62,11 +62,42 @@ large following buys past having shipped nothing.
 - Keynote at a tier-1 conference in the domain
 - Original research, or a named methodology other practitioners use
 
+**Authority, young-domain variant.** For domains under ~24 months old, the criteria above
+select for a maturity the domain has not reached — there are no tier-1 keynotes in a field
+that is a year old, so the standard list admits only institutional players. Domains flagged
+`age_months < 24` in `domains.yaml` score against this list instead, still requiring two:
+
+- First-party vendor of the platform (Anthropic, Vercel, et al.)
+- Primary artifact verified substantive — *inspected*, not merely described
+- Independent editorial coverage (see the Coverage exclusions below)
+- Sustained maintenance — ≥6 months of real commits
+- Adopted by a named downstream project
+
+*Discovered in the 2026-08-24 UI/UX run: every standard criterion failed for every
+third-party candidate, which is why first-party swept the top of that shortlist.*
+
 **Coverage** — independent corroboration:
 - ≥3 mentions by *distinct* Tier-A or Tier-B sources within 18 months
 - No more than 1 mention counted per source
 - No mentions from conflicted parties — anyone the candidate pays, employs, co-founded
   with, or is employed by
+- **Auto-generated directories never count.** Skill aggregators index every repo that
+  exists, so they discriminate nothing and would clear the floor for any candidate
+  whatsoever. Excluded types: auto-generated skill directory, SEO aggregator,
+  vendor-owned marketing property. The live blocklist is `config.yaml → coverage.excluded_domains`.
+
+*Discovered in the 2026-08-24 UI/UX run: the first coverage sweep returned Skillselion,
+ClaudePluginHub, SkillsMP, MDSkill, and x-cmd — five "independent sources" that are five
+scrapers. Real coverage (Snyk, UX Planet, Composio, Firecrawl) only surfaced once those
+were excluded from the search.*
+
+### Non-signals
+
+Recorded so they are not re-litigated. **Star-to-watcher ratio does not discriminate
+quality for skill repos.** Measured 2026-08-24: `vercel-labs/agent-skills` 251:1,
+`anthropics/skills` 155:1, `ui-ux-pro-max-skill` 241:1, against `facebook/react` at 37:1.
+Users star skill repos to bookmark and decline to watch to avoid notification load, so the
+ratio tracks repo category, not manipulation.
 
 ### Tier assignment
 
@@ -242,8 +273,13 @@ loudly enough that nobody curates in the mirror.
 
 - "Octopus Social Posting" is general multi-platform scheduling, not Octopus CRM.
   Filed under Content alongside repurposing. *(Confirmed 2026-08-24.)*
-- Vendoring third-party skills is license-gated: only OSI-approved licenses are vendored,
-  and the license is recorded in `PROVENANCE.yaml`. Anything else is pointer-only.
+- Vendoring is license-gated, and the gate applies **only to third-party skills**: only
+  OSI-approved licenses are vendored, with the license recorded in `PROVENANCE.yaml`.
+  Anything else is pointer-only. First-party skills (Anthropic, Vercel) install through
+  the plugin marketplace and are never vendored, so the gate does not apply to them —
+  necessary, because both `anthropics/skills` and `vercel-labs/agent-skills` report no
+  SPDX license via the API and an unqualified rule would block the two strongest sources
+  in the canon.
 - Thresholds in `config.yaml` are a starting position, expected to move after the first
   domain run shows whether they produce names worth respecting.
 

@@ -1,0 +1,67 @@
+# Canonize thresholds. Tuned after the 2026-08-24 UI/UX scout run.
+# "MASSIVE" has to be a number or it is not a rule.
+
+reach:
+  any_of:
+    single_platform_followers: 50000   # X, YouTube, or LinkedIn
+    github_stars: 5000                 # on a primary artifact in the domain
+    installs_or_downloads: 100000
+    aggregate_cross_platform: 250000
+
+authority:
+  # Standard variant — established domains.
+  standard:
+    require: 2
+    of:
+      - authors_or_maintains_canonical_tool_spec_or_library
+      - cited_by_primary_sources
+      - principal_or_founder_at_category_defining_company
+      - tier_1_conference_keynote
+      - original_research_or_named_methodology
+
+  # Young-domain variant — domains younger than ~24 months.
+  # The standard criteria select for a maturity the domain has not reached;
+  # applying them unchanged means only institutional players can ever qualify.
+  young_domain:
+    max_domain_age_months: 24
+    require: 2
+    of:
+      - first_party_vendor_of_the_platform      # Anthropic, Vercel, et al.
+      - primary_artifact_verified_substantive   # inspected, not just described
+      - independent_editorial_coverage          # see coverage.excluded_sources
+      - sustained_maintenance                   # >=6 months of real commits
+      - adopted_by_a_named_downstream_project
+
+coverage:
+  min_independent_sources: 3
+  max_per_source: 1
+  window_months: 18
+  # Auto-generated directories index every skill repo that exists, so they
+  # discriminate nothing and would pass any candidate. Never count as coverage.
+  excluded_source_types:
+    - auto_generated_skill_directory
+    - seo_aggregator
+    - vendor_owned_marketing_property
+  excluded_domains:
+    - skillselion.com
+    - claudepluginhub.com
+    - skillsmp.com
+    - mdskill.dev
+    - x-cmd.com
+    - crossaitools.com
+    - claudemarketplaces.com
+    - collectivebrain.de
+
+disqualifiers:
+  - no_verifiable_primary_artifact
+  - undisclosed_paid_promotion
+
+# Signals that look decisive and are not. Recorded so they are not re-litigated.
+non_signals:
+  star_to_watcher_ratio:
+    note: >
+      Does not discriminate quality for skill repos. Measured 2026-08-24:
+      vercel-labs/agent-skills 251:1, anthropics/skills 155:1,
+      ui-ux-pro-max-skill 241:1, facebook/react 37:1. Users star skill repos
+      to bookmark them and decline to watch to avoid notification load, so the
+      ratio reflects repo category, not manipulation.
