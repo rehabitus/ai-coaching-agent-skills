@@ -1,0 +1,6 @@
+id: coach-agencies
+name: Coach Agencies as a Client
+description: Capabilities used by an agency to serve multiple coaches consistently.
+skills:
+  - content-repurposing/talking-head-microclips
+status: dogfood

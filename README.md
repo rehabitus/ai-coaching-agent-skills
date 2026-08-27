@@ -1,144 +1,66 @@
-# AI Coaching Agent Skills
+# Rehabit Agent Skills
 
-**Open-source agent skills for coaches, consultants, and solo founders who use AI to amplify human potential — not replace it.**
+The maintained capability registry for the Rehabit / ForeSee 4C operating system.
 
-Built by [Rehabit](https://rehabit.ai) — rehabiting coaching through AI that focuses on our *Actual Intelligence*. These skills power the **4C AI Coaching OS**, a coordinated agent system that helps conscious coaches clarify their vision, liberate their time, and scale their impact.
+This repository is intentionally not an “awesome list.” A skill earns CORE status only after Rehabit uses it repeatedly, assigns an owner, records evidence, and demonstrates that it improves a workflow or business metric.
 
-> The HOLOProneur thesis: A solo founder-coach, armed with the right AI agent skills, can reach a billion lives — measured not in revenue alone, but in the reach and impact that revenue enables. From dystopia to utopia, one coached human at a time.
+## Repository Model
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+| Layer | Question it answers | Source of truth |
+|---|---|---|
+| Need | What real Rehabit job needs solving, for whom, and how important is it? | Notion; mirrored in `registry/needs.yaml` |
+| Skill | How is one repeatable capability executed? | `skills/` and Git history |
+| Agent | Which capabilities should run, and in what order? | `agents/` |
+| Pack | Which maintained capabilities should one audience install? | `packs/` |
+| Canon | Which external sources and alternatives passed vetting? | `registry/canon.yaml` and evidence dossiers |
+| Usage | What have we actually used, and what happened? | `registry/skills.yaml` and sanitized `registry/usage.yaml` |
 
----
-
-## What Are Agent Skills?
-
-Agent Skills are portable instruction sets (`.md` files) that give AI agents specialized capabilities. Drop one into your project and your AI assistant gains domain expertise — from coaching session design to client journey orchestration.
-
-Each skill in this collection is designed for the **4C execution loop**:
-
-| Phase | Mode | What Happens |
-|-------|------|-------------|
-| **Clarify** | Orientation | Establish direction, anchor vision, define identity |
-| **Condition** | Rehearsal | Practice new patterns, build capability through repetition |
-| **Create** | Expression | Turn insights into tangible output |
-| **Compound** | Leverage | Distribute, get feedback, integrate learnings |
-
----
-
-## Skills
-
-### Core Agents (Internal OS)
-
-These foundational agents exist for every user and client in the system.
-
-| # | Skill | Description | Status |
-|---|-------|-------------|--------|
-| 01 | [Vision Agent](skills/01-vision-agent/) | Clarify direction — establish future states, anchor goals, maintain the north star | `placeholder` |
-| 02 | [Persona Agent](skills/02-persona-agent/) | Evolving self-model — track identity shifts, adapt guidance to who the user is becoming | `placeholder` |
-| 03 | [Journey Co-Pilot](skills/03-journey-copilot/) | Orchestration layer — coordinate all agents, decide what happens next, detect readiness | `placeholder` |
-| 04 | [Lessons Agent (Lescen)](skills/04-lessons-agent/) | Learn / Practice / Play engine — deliver experience-driven learning that never ends | `placeholder` |
-| 05 | [Creator Agent](skills/05-creator-agent/) | Play becomes output — turn insights into ideas, frameworks, drafts, and prototypes | `placeholder` |
-| 06 | [Producer Agent](skills/06-producer-agent/) | Idea to execution — add structure, timelines, and momentum to ship imperfectly | `placeholder` |
-| 07 | [Composer Agent](skills/07-composer-agent/) | Integration and narrative — synthesize across all agents, prevent fragmentation | `placeholder` |
-
-### Scaling Agents (AgentC Layer)
-
-B2B leverage agents used in the ForeSee / 4C Agency to scale coaching operations.
-
-| # | Skill | Description | Status |
-|---|-------|-------------|--------|
-| 08 | [Scout Agent](skills/08-scout-agent/) | Signal detection — identify opportunities, monitor trends, detect market gaps | `placeholder` |
-| 09 | [Enrichment Agent](skills/09-enrichment-agent/) | Context expansion — add depth, references, case studies to upgrade signal to insight | `placeholder` |
-| 10 | [Sharing Agent](skills/10-sharing-agent/) | Distribution and feedback — prepare outputs for platforms, close feedback loops | `placeholder` |
-| 11 | [Integrating Agent](skills/11-integrating-agent/) | System memory — feed results back, update models, improve future guidance | `placeholder` |
-
-### How They Work Together
-
-```
-Vision sets direction
-  → Persona defines current self
-    → Journey decides next step
-      → Lescen delivers Learn / Practice / Play
-        → Creator turns Play into output
-          → Producer ships it
-            → Sharing tests it in the world
-              → Integrating feeds results back
-                → Composer keeps meaning intact
-                  → Loop restarts — stronger
+```text
+skills/       portable, task-focused capability packages
+agents/       4C and agency orchestration blueprints
+packs/        Coaches / Coach's Clients / Coach Agencies bundles
+registry/     needs, maintained skills, usage, external canon, provenance
+adapters/     Claude, Codex, Hermes, and Antigravity packaging metadata
+templates/    starting points for new packages
+scripts/      deterministic repository validation
 ```
 
----
+The old numbered `01–11` folders represented an agent sequence, not eleven mature skills. They now live under `agents/` with explicit lifecycle status. Sequence belongs in orchestration metadata and diagrams, not in unstable folder numbers.
 
-## Quick Start
+## Maintained Skills
 
-### Option 1: Clone the whole collection
+| Skill | Status | Audiences | Evidence |
+|---|---|---|---|
+| [Talking-Head Microclips](skills/content-repurposing/talking-head-microclips/) | `dogfood` | Coaches, Coach Agencies | 1 controlled test; 13 candidates; 2 operator-selected previews |
+
+`dogfood` means actively tested inside Rehabit. It does not mean performance-proven or ready for automatic public recommendation.
+
+## Audience Packs
+
+- [Coaches](packs/coaches/PACK.yaml) — capabilities coaches use to operate and grow their own business
+- [Coach's Clients](packs/coaches-clients/PACK.yaml) — capabilities delivered directly to the people coaches serve
+- [Coach Agencies](packs/coach-agencies/PACK.yaml) — capabilities used repeatedly across multiple coaches
+
+Packs reference shared skills; they never copy them.
+
+## Public and Private Boundary
+
+The public CORE contains sanitized instructions, schemas, provenance, tests, and aggregate usage evidence. Client media, private prompts, brand assets, credentials, commercial details, and client-identifying metrics remain in the private Rehabit implementation repository.
+
+## Contributing and Maintenance
+
+Read [MAINTENANCE.md](MAINTENANCE.md) before adding or promoting a package and [CONTRIBUTING.md](CONTRIBUTING.md) before opening a change.
+
+Validate locally with:
 
 ```bash
-git clone https://github.com/rehabitus/ai-coaching-agent-skills.git
+ruby scripts/validate_repository.rb
 ```
 
-Copy any skill file from `skills/` into your project.
-
-### Option 2: Use an individual skill
-
-Download or copy a single numbered `.md` file directly into your AI workflow.
-
-### Option 3: Reference as submodule
-
-```bash
-git submodule add https://github.com/rehabitus/ai-coaching-agent-skills.git skills/coaching
-```
-
----
-
-## The 4C AI Coaching OS
-
-These skills are the building blocks of a larger system:
-
-- **Rehabit** (rehabit.ai) — The core B2C coaching engine
-- **ForeSee / 4C** (rehabit.biz) — The B2B layer for coaches, powered by AgentC
-- **Syndicus** — Community and digital twin layer
-- **Lescen** — The learning experience engine (Learn / Practice / Play)
-
-The 4C stands for the qualities we look for in coaches we serve: **Conscious, Creative, Connected, Coach** — and the execution loop they master: **Clarify, Condition, Create, Compound**.
-
----
+Scheduled validation checks lifecycle review dates weekly. Every CORE skill still requires a human owner and real dogfood evidence.
 
 ## Philosophy
 
-Most AI systems answer questions, generate content, or optimize tasks.
+These capabilities should help coaches build human capability rather than replace human judgment. The 4C loop remains **Clarify → Condition → Create → Compound**; this repository makes the skills powering that loop observable, testable, and maintainable.
 
-**These skills build capability.**
-
-They don't just help users *do things* — they help users **become the kind of person who can do those things repeatedly**.
-
-The agents here are designed for coaches who project positive visions and images into the world. AI focused on Actual Intelligence. Skills essential for the HOLOProneur — the solo founder-coach building toward massive impact.
-
----
-
-## Contributing
-
-We welcome contributions from coaches, builders, and AI practitioners. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### Adding a new skill
-
-Create a numbered directory with a `SKILL.md` inside:
-
-```
-skills/
-  12-your-skill-name/
-    SKILL.md
-```
-
-Use [00-template](skills/00-template/) as a starting point.
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-Built with purpose by [Rehabit](https://rehabit.ai) | [ForeSee 4C](https://rehabit.biz) | [@rehabitus](https://github.com/rehabitus)
+Built by [Rehabit](https://rehabit.ai) and [ForeSee 4C](https://rehabit.biz).

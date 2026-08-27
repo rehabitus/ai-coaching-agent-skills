@@ -1,0 +1,29 @@
+domains:
+  - id: ui-ux
+    name: UI/UX Design
+    group: Content
+    definition: Interface design, interaction patterns, design systems, usability
+    age_months: 12          # as an agent-skill domain; triggers young_domain authority
+    covered_when: ">=2 Tier-A creators AND >=1 canonized skill"
+    status: scouted         # 2026-08-24
+  - id: frontend-web
+    name: Front-End Web Dev & Website Design
+    group: Content
+    age_months: 12
+    status: scouted         # covered by the same run as ui-ux
+  - id: gtm-strategy
+    name: GTM Strategy
+    group: Offers
+    status: not-scouted
+  - id: lead-scouting
+    name: Lead Scouting & Enrichment
+    group: Outreach
+    status: not-scouted
+  - id: social-scheduling
+    name: Social Scheduling & Distribution
+    group: Content
+    status: not-scouted
+  - id: content-repurposing
+    name: Content Repurposing
+    group: Content
+    status: not-scouted

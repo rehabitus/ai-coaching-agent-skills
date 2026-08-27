@@ -1,0 +1,6 @@
+id: coaches
+name: Coaches as a Client
+description: Capabilities a coach uses to operate, create, and grow their own coaching business.
+skills:
+  - content-repurposing/talking-head-microclips
+status: dogfood

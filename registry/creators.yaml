@@ -1,0 +1,85 @@
+# The Trust Registry. Tier A creators are canonization-eligible.
+# Tier B corroborate but are never themselves canonized.
+# Every entry traces to a dossier under registry/evidence/.
+
+creators:
+  - slug: anthropic
+    name: Anthropic
+    tier: A
+    domains: [ui-ux, frontend-web]
+    handles:
+      github: anthropics
+    scores:
+      reach:     {passed: true, basis: "anthropics/skills 171,315 stars; frontend-design 277k+ installs", retrieved: 2026-08-24}
+      authority: {passed: true, variant: young_domain, basis: [first_party_vendor_of_the_platform, sustained_maintenance, primary_artifact_verified_substantive]}
+      coverage:  {passed: true, count: 3, sources: [snyk, ux-planet, composio]}
+    disqualifiers: []
+    evidence: evidence/anthropic.md
+    canonized: 2026-08-24
+    recheck_due: 2027-02-24
+
+  - slug: vercel-labs
+    name: Vercel Labs
+    tier: A
+    domains: [ui-ux, frontend-web]
+    handles:
+      github: vercel-labs
+    scores:
+      reach:     {passed: true, basis: "vercel-labs/agent-skills 30,409 stars", retrieved: 2026-08-24}
+      authority: {passed: true, variant: young_domain, basis: [first_party_vendor_of_the_platform, sustained_maintenance, adopted_by_a_named_downstream_project]}
+      coverage:  {passed: true, count: 3, sources: [snyk, firecrawl, composio]}
+    disqualifiers: []
+    evidence: evidence/vercel-labs.md
+    canonized: 2026-08-24
+    recheck_due: 2027-02-24
+
+  - slug: nextlevelbuilder
+    name: Next Level Builder
+    tier: C
+    pending: hands-on-test        # blocks promotion to A; evidence is otherwise sufficient
+    domains: [ui-ux]
+    handles:
+      github: nextlevelbuilder
+      web: https://nextlevelbuilder.io
+    scores:
+      reach:     {passed: true, basis: "ui-ux-pro-max-skill 120,462 stars", retrieved: 2026-08-24}
+      authority: {passed: true, variant: young_domain, basis: [primary_artifact_verified_substantive, sustained_maintenance]}
+      coverage:  {passed: true, count: 3, sources: [snyk, ux-planet, composio]}
+    disqualifiers: []
+    concerns:
+      - "Account created 2025-11-30, same day as the repo; 1,525 followers against 120,462 stars"
+    evidence: evidence/nextlevelbuilder.md
+    recheck_due: 2026-11-24
+
+  - slug: leonxlnx
+    name: Leon Lin
+    tier: C
+    domains: [ui-ux]
+    handles:
+      github: Leonxlnx
+    scores:
+      reach:     {passed: true,  basis: "taste-skill 79,938 stars", retrieved: 2026-08-24}
+      authority: {passed: false, variant: young_domain, basis: [sustained_maintenance]}
+      coverage:  {passed: false, count: 0}
+    disqualifiers: []
+    evidence: evidence/leonxlnx.md
+    recheck_due: 2026-11-24
+
+# Tier B — Amplifiers. Corroborate coverage; never canonized.
+amplifiers:
+  - slug: snyk
+    name: Snyk
+    type: editorial
+    url: https://snyk.io/articles/top-claude-skills-ui-ux-engineers/
+  - slug: ux-planet
+    name: UX Planet (Nick Babich)
+    type: editorial
+    url: https://uxplanet.org/must-have-ux-ui-design-skills-for-claude-code-364e93e3a614
+  - slug: composio
+    name: Composio
+    type: editorial
+    url: https://composio.dev/content/top-design-skills
+  - slug: firecrawl
+    name: Firecrawl
+    type: editorial
+    url: https://www.firecrawl.dev/blog/best-claude-code-skills
