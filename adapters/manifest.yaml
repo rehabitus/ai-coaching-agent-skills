@@ -1,0 +1,11 @@
+portable_source: skills
+policy: Adapters load or package the portable source; they do not fork its instructions.
+targets:
+  claude:
+    status: planned
+  codex:
+    status: planned
+  hermes:
+    status: planned
+  antigravity:
+    status: planned

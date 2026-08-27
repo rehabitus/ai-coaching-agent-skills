@@ -1,0 +1,27 @@
+# Versioned mirror of needs maintained in Notion. Notion owns need priority and audience;
+# GitHub owns the implementation and maintenance fields that resolve each need.
+
+audiences:
+  - id: coaches
+    name: Coaches as a Client
+  - id: coaches-clients
+    name: Coach's Clients as a Client
+  - id: coach-agencies
+    name: Coach Agencies as a Client
+
+needs:
+  - id: content-repurposing/talking-head-microclips
+    name: Long-form talking-head to high-impact microclips
+    problem: Find self-contained 3–5 second hooks and preserve the strongest 7–15 or 15–45 second payoff in a short-form-native edit.
+    audiences: [coaches, coach-agencies]
+    group: Content
+    priority: active
+    status: in-development
+    notion_source: https://app.notion.com/p/mikeolaski/RHB-Agent-Skill-Packages-SOT-20afccbf926d80f7885accf399eb6f59
+    resolved_by:
+      - content-repurposing/talking-head-microclips
+    definition_of_done:
+      - Produces both duration classes from real long-form source footage
+      - Provides exact transcript-grounded timestamps before rendering
+      - Produces reviewable 9:16 cuts with captions and restrained graphic reinforcement
+      - Records operator selection and downstream performance separately

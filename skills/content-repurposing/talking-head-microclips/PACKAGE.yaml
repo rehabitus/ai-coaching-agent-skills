@@ -1,0 +1,27 @@
+id: content-repurposing/talking-head-microclips
+kind: skill
+status: dogfood
+owner: rehabit-media-ops
+need_ids:
+  - content-repurposing/talking-head-microclips
+audiences:
+  - coaches
+  - coach-agencies
+agents:
+  - agency-growth/distribution-transformer
+metrics:
+  primary: operator_selected_rate
+  secondary:
+    - time_to_first_usable_clip_minutes
+    - published_clip_rate
+    - qualified_response_rate
+review:
+  cadence_days: 30
+  last_reviewed: 2026-08-27
+  review_due: 2026-09-26
+provenance:
+  type: rehabit-authored
+  public_sanitized: true
+  source_references:
+    - https://github.com/zhouxiaoka/autoclip
+    - https://github.com/mutonby/openshorts

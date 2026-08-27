@@ -24,7 +24,7 @@ audit trail that survives the decision.
 
 | Decision | Choice | Why |
 |---|---|---|
-| Source of truth | **GitHub** (this repo); Notion is a one-way mirror | Trust decisions need diffs, PR review, and provenance history. Notion loses all three. |
+| Source of truth | **Split by object:** Notion owns Needs; GitHub owns implementations, canon, provenance, and lifecycle | Business priority needs a rally surface; executable artifacts and trust decisions need diffs, PR review, and history. |
 | Admission model | **Two-stage gate** — creator vetted first, skills inherit provenance | "Canonized" must mean "from a vetted source," which requires the source be vetted independently and first. |
 | Canon artifact | **Vendored upstream + provenance** | Ships the actual working skill, credits the author, and makes upstream drift detectable. |
 | Modes | **Three** — `scout`, `vet`, `review` — on one shared trust engine | A link Mike drops and a candidate scout finds must be judged by identical rules and leave the same trail. |
@@ -131,12 +131,19 @@ may be older.
 registry/
   config.yaml           # thresholds, so "MASSIVE" is a number we can tune
   domains.yaml          # the universe map — every domain the OS needs covered
+  needs.yaml            # versioned mirror of Notion-owned Needs
+  skills.yaml           # Rehabit-maintained packages, ownership, usage, lifecycle
+  usage.yaml            # sanitized dogfood run evidence
   creators.yaml         # the Trust Registry
   canon.yaml            # the Skill Canon
   evidence/<slug>.md    # dossier per creator: every signal, URL + retrieval date
 skills/<domain>/<slug>/
-  SKILL.md              # vendored upstream body, unmodified
-  PROVENANCE.yaml       # upstream repo, commit, license, creator ref, vendored date
+  SKILL.md              # portable repeatable capability
+  PACKAGE.yaml          # owner, Needs, audiences, metrics, review date, provenance
+agents/<system>/<slug>/
+  AGENT.md              # orchestration and routing blueprint
+packs/<audience>/
+  PACK.yaml             # install bundle referencing shared skills
 ```
 
 ### `domains.yaml`
@@ -252,21 +259,25 @@ Canon maintenance. Walks every entry in `canon.yaml` and checks it against upstr
 
 ## Notion Sync
 
-One-way, GitHub → Notion, into the existing `RHB - Agent & Skill Packages` data source
-(`collection://20afccbf-926d-80dc-8088-000b23258da6`). Existing properties are preserved.
+Field ownership is directional rather than treating either system as authoritative for every object:
+
+- Notion → `registry/needs.yaml`: Need, audience, priority, problem owner, and business context.
+- GitHub → Notion: implementation ID, lifecycle, owner, evidence, provenance, license, and review status.
+
+The existing `RHB - Agent & Skill Packages` data source
+(`collection://20afccbf-926d-80dc-8088-000b23258da6`) remains the rally surface. Existing properties are preserved.
 
 Properties to add: `Tier`, `Reach`, `Authority`, `Coverage`, `Evidence URL`,
 `Canonized Date`, `Upstream Repo`, `License`.
 
-Notion is a read surface. Edits there are overwritten on next sync, and the spec says so
-loudly enough that nobody curates in the mirror.
+Sync must not overwrite fields owned by the opposite system. A stable Need ID connects the
+Notion problem record to one or more GitHub implementations.
 
 ## Out of Scope
 
-- **B2C / Pro / B2B tiering and packaging for Rehabit creators and coaches.** The repo is
-  inherently the registry; packaging it for distribution is a separate job, and it is not
-  worth designing before the canon holds real content.
-- Two-way Notion sync.
+- Automatic two-way editing of the same field between Notion and GitHub.
+- Client-specific recipes, media, brand assets, credentials, and commercial performance;
+  those stay in the private implementation repository.
 - Automated canonization without human approval. Every write path stops for review.
 
 ## Assumptions

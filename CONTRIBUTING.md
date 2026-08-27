@@ -1,47 +1,38 @@
-# Contributing to AI Coaching Agent Skills
+# Contributing
 
-Thank you for your interest in contributing. These skills power the 4C AI Coaching OS — every contribution helps coaches scale their positive impact.
+Contribute only against a demonstrated Rehabit need. Interesting tools belong on the watchlist until a real job requires them.
 
-## How to Contribute
+## Choose the Correct Layer
 
-### Adding a New Skill
+- Add a `skill` when the package teaches a repeatable, independently useful task.
+- Add an `agent` when it selects or sequences several skills and owns hand-offs or state.
+- Add a `pack` when an audience needs a curated installation bundle.
+- Add a `need` when the problem is real but the implementation is not yet selected.
+- Add an external candidate to the watchlist or canonization workflow; do not quietly copy it into CORE.
 
-1. Fork this repo
-2. Create a new numbered directory in `skills/` (e.g. `skills/12-your-skill-name/`)
-3. Add a `SKILL.md` inside it using `skills/00-template/SKILL.md` as your starting point
-4. Include clear frontmatter (`name`, `description`)
-5. Write the skill body with structured sections
-6. Submit a pull request
+## Adding a Skill
 
-### Improving an Existing Skill
+1. Register the Need in Notion and mirror its stable ID in `registry/needs.yaml`.
+2. Search the existing skills and external canon for reusable components.
+3. Create `skills/<domain>/<skill-name>/SKILL.md` and `PACKAGE.yaml` using `templates/skill/`.
+4. Add the implementation to `registry/skills.yaml` with an owner, lifecycle status, review date, and honest usage counts.
+5. Add it to audience packs only when the audience mapping is demonstrated.
+6. Add sanitized run evidence to `registry/usage.yaml` after real testing.
+7. Run `ruby scripts/validate_repository.rb`.
 
-1. Open an issue describing the improvement
-2. Fork and make your changes
-3. Submit a pull request referencing the issue
+## Skill Rules
 
-### Skill File Format
+- Use lowercase hyphenated names; the frontmatter name must match the skill folder.
+- Give the skill one clear repeatable outcome. Agents own orchestration.
+- Keep instructions portable: no local absolute paths, credentials, private client names, or undisclosed proprietary assets.
+- Preserve exact provenance and license information for external material.
+- Do not describe a concept, stub, or untested prompt as production-ready.
+- Record unknown performance as `null`; never turn an operator preference into a business-result claim.
 
-```yaml
----
-name: your-skill-name
-description: When the user wants to... Use when...
-metadata:
-  version: 0.1.0
-  category: core | scaling | utility
-  4c-phase: clarify | condition | create | compound | all
----
+## Pull Request Evidence
 
-# Skill instructions here
-```
-
-### Guidelines
-
-- Skills should be **focused** — one agent, one purpose
-- Write instructions as if briefing a capable colleague
-- Include the 4C phase mapping where applicable
-- Reference other skills when there are dependencies
-- Keep skills portable — no hardcoded paths or API keys
+Every material skill change should identify the Need, owner, lifecycle status, observed failure or desired metric, test evidence, public/private review, and next review date. CORE promotion must satisfy the gate in [MAINTENANCE.md](MAINTENANCE.md).
 
 ## Code of Conduct
 
-Be respectful. Build for positive impact. These tools exist to help coaches project better visions into the world.
+Be respectful. Build for positive human impact, give upstream creators credit, and make evidence stronger than claims.

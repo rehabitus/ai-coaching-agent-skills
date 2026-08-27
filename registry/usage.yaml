@@ -1,0 +1,19 @@
+# Sanitized run evidence. Detailed client media, brand files, and commercial
+# performance remain in the private Rehabit implementation repository.
+
+runs:
+  - id: 2026-08-27-talking-head-microclips-001
+    skill: content-repurposing/talking-head-microclips
+    date: 2026-08-27
+    stage: controlled-test
+    source_type: long-form-podcast
+    source_asset: private
+    candidates: 13
+    rendered_previews: 2
+    operator_selected: 2
+    published: null
+    outcome: selected-for-iteration
+    evidence: internal-run-retained-private
+    notes:
+      - Tested both 7–15 second and 15–45 second classes.
+      - Selection validates the concepts, not yet final output quality or business impact.

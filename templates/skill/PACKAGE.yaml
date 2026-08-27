@@ -1,0 +1,19 @@
+id: replace-with-domain/replace-with-skill-name
+kind: skill
+status: trial
+owner: replace-with-owner
+need_ids:
+  - replace-with-need-id
+audiences: []
+agents: []
+metrics:
+  primary: replace-with-observable-metric
+  secondary: []
+review:
+  cadence_days: 30
+  last_reviewed: YYYY-MM-DD
+  review_due: YYYY-MM-DD
+provenance:
+  type: rehabit-authored
+  public_sanitized: false
+  source_references: []
