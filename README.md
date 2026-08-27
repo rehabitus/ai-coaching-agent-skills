@@ -1,6 +1,6 @@
 # Rehabit Agent Skills
 
-The maintained capability registry for the Rehabit / ForeSee 4C operating system.
+The public, evidence-led registry for agent skills Rehabit actually uses and maintains.
 
 This repository is intentionally not an “awesome list.” A skill earns CORE status only after Rehabit uses it repeatedly, assigns an owner, records evidence, and demonstrates that it improves a workflow or business metric.
 
@@ -59,8 +59,14 @@ ruby scripts/validate_repository.rb
 
 Scheduled validation checks lifecycle review dates weekly. Every CORE skill still requires a human owner and real dogfood evidence.
 
-## Philosophy
+## About This Repository
 
-These capabilities should help coaches build human capability rather than replace human judgment. The 4C loop remains **Clarify → Condition → Create → Compound**; this repository makes the skills powering that loop observable, testable, and maintainable.
+This repository publishes sanitized, reusable skill packages for coaches, the people they coach, and agencies serving coaches. A package belongs here only when it maps to a real Rehabit need and has an owner, lifecycle status, and evidence from actual use. Private client data, credentials, brand assets, and implementation details stay outside the public repository.
 
-Built by [Rehabit](https://rehabit.ai) and [ForeSee 4C](https://rehabit.biz).
+### Rehabit Ecosystem
+
+- [Rehabit](https://rehabit.us) — transformation training and future-self coaching for individuals
+- [Rehabit for coaches and partners](https://rehabit.biz) — AI-enabled coaching systems and delivery
+- [Rehabit on GitHub](https://github.com/rehabitus) — public code and maintained packages
+- [Mike Olaski / Ola.Ski](https://ola.ski) — founder and repository maintainer
+- [IntoGreat.Systems](https://intogreat.systems) — related integrated-AI systems work for organizations
