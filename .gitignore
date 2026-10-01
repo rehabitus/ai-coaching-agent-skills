@@ -1,6 +1,9 @@
 .DS_Store
 .env
 .env.local
+temp_auto_push.bat
 node_modules/
 .claude/
 *.log
+.gitignore
+branch_structure.json
